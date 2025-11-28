@@ -9,88 +9,142 @@
     <style>
         body{
             background-color: linen;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        header{
+            /* width: 100%; */
+            display: flex;
+            justify-content: space-between;
+            padding: 0 50px;;
+            height: 70px;
+            align-items: center;;
+            background: rgba(0,0,0,0.2);
+        }
+        header ul{
+            position: relative;
+            list-style: none;;
+        }
+        header ul li {
+            float: left;
+            padding: 5px 5px;
+        }
+        header ul li a{
+            text-decoration: none;
+            font-family: cursive;
+            font-size: 16px;
+            transition: 1s ease;
+            position: relative;
+        }
+        header ul li a:after{
+            content: "";;
+            width: 0%;
+            height: 3px;
+            background: black;
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            transition: 1s ease;
+        }
+        header ul li a:hover::after{
+            width: 100%
+        }
+        .logo{
+            background: rgba(0, 0, 0, 0.603);
+        }
+        .logo h2{
+            font-size: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(to left, red,yellow,green,orange,purple,red);
+            background-clip: text;
+            color: transparent;
+            animation: ColorChange 10s linear infinite;
+            background-size: 200%;
+        }
+        .menutoggle{
+            display: none;
+        }
+        @keyframes ColorChange{
+            0%{
+                background-position: 400% 50%;
+            }
+            100%{
+                background-position: 100% 50%;
+            }
+        }
+        @media screen and (max-width: 500px){
+            header{
+                padding: 0px 0px;
+            }
+            header nav{
+                width: 100%;
+                background: rgb(187, 96, 96);
+                position: absolute;
+                top: 70px;
+            }
+            header nav ul li{
+                width: 100%;
+            }
+            .menutoggle{
+                display: flex;
+                width: 40px;
+                height: 40px;
+                /* background: black; */
+                margin-right: 10px;
+                display: flex;
+                align-items: center;
+                position: relative;
+                justify-content: center;
+            }
+            .menutoggle::after{
+                content: "";;
+                width: 100%;
+                height: 3px;
+                background: black;
+                box-shadow: 0 10px black;
+                position: absolute;
+                transform: translateY(0px);
+            }
+                .menutoggle::before{
+                content: "";;
+                width: 100%;
+                height: 3px;
+                background: black;
+                position: absolute;
+                transform: translateY(-10px);
+            }
+        }
+        header.active .menutoggle::after{
+            transform: rotate(315deg);
         }
     </style>
 </head>
 <body>
-    <div class="nav bar">
+    
     <header>
-        <nav></nav>
+        <div class="logo">
+            <h2>Renny Koech</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT ME</a></li>
+                <li><a href="#">SERVICES</a></li>
+                <li><a href="#">PROJECTS</a></li>
+                <li><a href="#">SKILLS</a></li>
+                <li><a href="#">CONTACTS</a></li>
+            </ul>
+        </nav>
+        <div class="menutoggle" id="menutoggle">
+
+        </div>
 
         
         </div>
     </header>
     
-</body>
-<div class="home">
-    <section id="HOME">
-        <div class="page">
-            <div id="mysidebar" class="sidebar">
-                <a href="javasricpt:void(0)" class="closebtn" onclick="closenav()"></a>
-                <a href="#HOME">HOME</a>
-                <a href="#ABOUT ME">ABOUT ME</a>
-                <a href="#EDUCATION">EDUCATION</a>
-                <a href="#SKILLS">Skills</a>
-                <a href="#referees">REFEREES</a>
-                <a href="#Hobbies">HOBBIES</a >
 
-            
-        </div>
-        <div id="main">
-            <button class="openbtn" onclick="openNav()">MENU</button>
-
-        </div>
-        <script>
-            function openNav(){
-                document.getElementById("Mysidebar").style.width="250px";
-                document.getElementById("main").style.scrollMarginLeft="250px";
-                
-
-            }
-             function openNav(){
-              
-                document.getElementById("Mysidebar").style.width="250px";
-                document.getElementById("main").style.scrollMarginLeft="250px";
-             }
-                
-                
-        </script>
-        
-<h1> HOME</h1>
-<h2>Personal Details</h2>
-<div class="prof">
-    <img src="src="c:\Users\koech\Pictures\my pic\IMG_20240623_143611_174.jpg width="200px" height="250px">
-
-</div>
- 
-        <div class="animated">
-            <h1> welcome to personal curriculum vitae website</h1>
-            <p>some interest content here</p>
-        </div>
-        <p>
-            <img src="src="c:\Users\koech\Pictures\my pic\IMG_20240623_143611_174.jpg width="200px" height="250px">
-<div class="details">
-   <strong>Name:</strong> Renny kiprotich koech</p> 
-   <p> <strong>Email</strong>kiprotichrenny44@gmail.com</p>
-   <p> <strong>contact</strong>0796852361</p>
-   <p> <stronG>address</strong>p .o. box 25 litein,KENYA</P>
-   <p><strong>date of birth</strong>12/2/2004</p>
-   <p> <strong>nationality</strong>Kenyan</p>
-   <p> <strong>marital status</strong>single</p>
-</div>
-        </p>
-<header>
-    <nav>
-        <a href="index2.html">Home</a>
-        <a href="about.html">about me</a>
-        <a href="workexperience.html">workexperience</a>
-        <a href="education.html">education</a>
-        <a href="skills.html">skills</a>
-        <a href="referees.html">referees</a>
-        <a href="contact me.html">contact me</a>
-        <a href="hobbies.html">hobbies</a>
-    </nav>
-</header>
 <div class="education">
     <section id="education"
 <h1>EDUCATION</h1>
@@ -153,3 +207,12 @@
  
     </form>
 </div>
+<script>
+    let header = document.getElementsByName('header');
+    let menutoggle = document.getElementById("#menutoggle");
+
+    menutoggle.onclick = function (){
+        header.class.toggle("active")
+    }
+</script>
+</body>
